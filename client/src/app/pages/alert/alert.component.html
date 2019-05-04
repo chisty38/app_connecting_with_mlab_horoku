@@ -1,0 +1,75 @@
+<main class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <h1>Send an alert</h1>
+      <form autocomplete="off" (submit)="onAlertSubmit()">
+        <div class="form-group">
+          <label for="patientID">Patient ID</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="alert.patientID"
+            name="patientID"
+            placeholder="Enter Patient ID"
+            id="patientID"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="alert.firstName"
+              name="firstName"
+              placeholder="Enter First Name"
+              id="firstName"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="alert.lastName"
+              name="lastName"
+              placeholder="Enter Last Name"
+              id="lastName"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+            <textarea class="form-control" type="text"
+            class="form-control"
+            [(ngModel)]="alert.description"
+            name="description"
+            placeholder="Enter description"
+            id="description"
+            required
+            autocomplete="off" rows="3">
+          </textarea>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-edit"></i> Submit
+        </button>
+
+        <a routerLink="/" class="btn btn-warning">
+          <i class="fa fa-undo"></i> Cancel
+        </a>
+      </form>
+    </div>
+  </div>
+</main>
+
+

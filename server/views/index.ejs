@@ -1,0 +1,87 @@
+<% include ./partials/header.ejs %>
+<div class="container">
+
+  <div class="jumbotron">
+
+    <h1 class="display-4">Welcome to <%= title %></h1>
+
+    <% if ((title == "Home")) { %>
+    <P>Nurse - Username: nurse1 Password: 1234</P>
+    <P>Patient - Username: patient2 Password: 1234</P>
+    <P>Patient - Username: patient3 Password: 1234</P>
+    <% } %>
+
+    <% if ((title == "Video") && (category == "Patient")) { %>
+
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/njeZ29umqVE"
+        allowfullscreen></iframe>
+    </div>
+    <% } %>
+
+    <% if ((title == "Vital Sign") && (category == "Nurse")) { %>
+
+    <a class="btn btn-primary" href="/vitalSign-list-Nurse" role="button">Vital Sign List</a>
+
+    <% } %>
+
+    <% if ((title == "Dailys") && (category == "Patient")) { %>
+
+    <a class="btn btn-info" href="/dailyTip" role="button">Click here to see Daily Tip</a>
+    <p></p>
+    <a class="btn btn-info" href="/dailyInfo" role="button">Click here to add Daily Information</a>
+
+    <% } %>
+
+    <% if ((title == "Check List") && (category == "Patient")) { %>
+
+    <P></P>
+
+    <div class="container">
+      <div class="input-group mb-3 col-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+        <input type="text" class="form-control" value="Have a Headache" readonly>
+      </div>
+
+      <div class="input-group mb-3 col-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+        <input type="text" class="form-control" value="Have a Headache" readonly>
+      </div>
+
+      <div class="input-group mb-3 col-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+        <input type="text" class="form-control" value="Have a Headache" readonly>
+      </div>
+
+      <div class="input-group mb-3 col-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+        <input type="text" class="form-control" value="Have a Headache" readonly>
+      </div>
+
+      <a class="btn btn-primary" href="/checkList-result" role="button">See Result</a>
+
+    </div>
+
+  </div>
+
+  <% } %>
+
+</div>
+
+<% include ./partials/footer.ejs %>

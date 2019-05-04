@@ -1,0 +1,95 @@
+<main  class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <h1>{{ title }}</h1>
+
+        <form autocomplete="off" (submit)="onDailyInfoSubmit()">
+          <div class="form-group">
+            <label for="patientID">Patient ID</label>
+            <input
+            type="text"
+            placeholder="Enter Patient ID"
+            class="form-control"
+            id="patientID"
+            name="patientID"
+            [(ngModel)]="dailyInfo.patientID"
+            required />
+          </div>
+
+          <div class="form-group">
+            <label for="water">How much do you drink water per day?</label>
+
+            <input
+            type="text"
+            placeholder="Enter amount of water you drink per day."
+            class="form-control"
+            id="water"
+            name="water"
+            [(ngModel)]="dailyInfo.water"
+            required />
+          </div>
+
+          <div class="form-group">
+            <label for="exercise">How many hour do you exercise per day?</label>
+
+            <input
+            type="text"
+            placeholder="Enter hours you work out daily."
+            class="form-control"
+            id="exercise"
+            name="exercise"
+            [(ngModel)]="dailyInfo.exercise"
+            required />
+          </div>
+
+          <div class="form-group">
+            <label for="smoke">Do you smoke?</label>
+
+            <input type="text"
+            placeholder="Answer Yes or No"
+            class="form-control"
+            id="smoke"
+            name="smoke"
+            [(ngModel)]="dailyInfo.smoke"
+            required />
+          </div>
+
+          <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="weight">What is your weight?</label>
+
+            <input
+            type="text"
+            placeholder="Enter your weight"
+            class="form-control"
+            id="weight"
+            name="weight"
+            [(ngModel)]="dailyInfo.weight"
+            required />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="height">What is your height?</label>
+
+            <input
+            type="text"
+            placeholder="Enter your height"
+            class="form-control"
+            id="height"
+            name="height"
+            [(ngModel)]="dailyInfo.height"
+            required />
+          </div>
+        </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check-square"></i> Submit
+          </button>
+          <a routerLink="/dailys" class="btn btn-warning">
+            <i class="fa fa-undo"></i> Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

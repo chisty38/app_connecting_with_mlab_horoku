@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <h1>{{ title }}</h1>
+
+      <form class="form" (submit)="onVitalDetailsSubmit()">
+        <div class="form-group">
+          <label for="patientID">Patient ID</label>
+
+          <input
+            type="text"
+            placeholder="Enter Patient ID"
+            class="form-control"
+            id="patientID"
+            name="patientID"
+            [(ngModel)]="vital.patientID"
+            value="{{ vital.patientID }}"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="temp">Body Temperature</label>
+
+          <input
+            type="text"
+            placeholder="Enter Body Temperature"
+            class="form-control"
+            id="temp"
+            name="temp"
+            [(ngModel)]="vital.temp"
+            value="{{ vital.temp }}"
+            required
+          />
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="heartRate">Heart Rate</label>
+
+          <input
+            type="text"
+            placeholder="Enter Heart Rate"
+            class="form-control"
+            id="heartRate"
+            name="heartRate"
+            [(ngModel)]="vital.heartRate"
+            value="{{ vital.heartRate }}"
+            required
+          />
+        </div>
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="bloodPressure">Blood Pressure</label>
+
+          <input
+            type="text"
+            placeholder="Enter Blood Pressure"
+            class="form-control"
+            id="bloodPressure"
+            name="bloodPressure"
+            [(ngModel)]="vital.bloodPressure"
+            value="{{ vital.bloodPressure }}"
+            required
+          />
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="respiratoryRate">Respiratory Rate</label>
+
+          <input
+            type="text"
+            placeholder="Enter Respiratory Rate"
+            class="form-control"
+            id="respiratoryRate"
+            name="respiratoryRate"
+            [(ngModel)]="vital.respiratoryRate"
+            value="{{ vital.respiratoryRate }}"
+            required
+          />
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="dailyTip">Daily Tip</label>
+
+          <input
+            type="text"
+            placeholder="Enter Daily Tip"
+            class="form-control"
+            id="dailyTip"
+            name="dailyTip"
+            [(ngModel)]="vital.dailyTip"
+            value="{{ vital.dailyTip }}"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-edit"></i> {{ title }}
+        </button>
+
+        <a routerLink="/vitalSign/vitalSign-list-Nurse" class="btn btn-warning">
+          <i class="fa fa-undo"></i> Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+

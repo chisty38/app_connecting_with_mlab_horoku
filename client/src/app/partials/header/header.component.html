@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand" routerLink="/">MainuL Haque => COMP308 Final Project</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">
+          <i class="fa fa-lg fa-home"></i> Home
+        </a>
+      </li>
+
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/alert">
+          <i class="fas fa-lg fa-envelope-open-text"></i> Alert
+        </a>
+      </li>
+
+      <li *ngIf="isLoggedAsNurse()" class="nav-item">
+        <a class="nav-link" routerLink="/seeAlerts">
+          <i class="fas fa-lg fa-envelope-open-text"></i> See Alerts
+        </a>
+      </li>
+
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/video">
+          <i class="fa fa-lg fa-play"></i> Video</a>
+      </li>
+
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/checkList">
+          <i class="fa fa-lg fa-list-alt"></i> Check List
+        </a>
+      </li>
+
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/dailys">
+          <i class="fa fa-lg fa-stethoscope"></i> Dailys
+        </a>
+      </li>
+
+      <li *ngIf="isLoggedAsNurse()" class="nav-item">
+        <a class="nav-link" routerLink="/vitalSign">
+          <i class="fa fa-lg fa-heartbeat"></i> Vital Sign
+        </a>
+      </li>
+
+      <li *ngIf="isLoggedIn() || isLoggedAsNurse()" class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline">
+        <i class="fa fa-lg fa-user"></i>
+
+        Welcom, {{ user.firstName }}</li>
+
+      <li *ngIf="isLoggedIn() || isLoggedAsNurse()" class="nav-item">
+        <a (click)="onLogoutClick()" routerLink="/logout" class="nav-link">
+          <i class="fas fa-lg fa-sign-out-alt"></i> Logout
+        </a>
+      </li>
+
+      <li *ngIf="!isLoggedIn() && !isLoggedAsNurse()" class="nav-item">
+        <a routerLink="/login" class="nav-link">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>

@@ -1,0 +1,68 @@
+<% include ../../partials/header.ejs %>
+
+<main class="container">
+    <% if(messages.length > 0) { %>
+    <div class="alert alert-danger">
+        <%= messages %>
+    </div>
+    <% } %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1><%= title %></h1>
+
+                <form class="form" method="POST">
+                    <div class="form-group">
+                        <label for="patientID">Patient ID</label>
+
+                        <input type="text" placeholder="Enter Patient ID" class="form-control" id="patientID"
+                            name="patientID" value="<%= patientID %>" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="water">How much do you drink water per day?</label>
+
+                        <input type="text" placeholder="Enter amount of water you drink per day." class="form-control"
+                            id="water" name="water" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exercise">How many hour do you exercise per day?</label>
+
+                        <input type="text" placeholder="Enter hours you work out daily." class="form-control"
+                            id="exercise" name="exercise" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="smoke">Do you smoke?</label>
+
+                        <input type="text" placeholder="Answer Yes or No" class="form-control" id="smoke" name="smoke"
+                            required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">What is your weight?</label>
+
+                        <input type="text" placeholder="Enter your weight" class="form-control" id="weight"
+                            name="weight" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="height">What is your height?</label>
+
+                        <input type="text" placeholder="Enter your height" class="form-control" id="height"
+                            name="height" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-check-square-o"></i> Submit
+                    </button>
+                    <a href="/dailys" class="btn btn-warning">
+                        <i class="fa fa-undo"></i> Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<% include ../../partials/footer.ejs %>

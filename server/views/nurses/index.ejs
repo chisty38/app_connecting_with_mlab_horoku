@@ -1,0 +1,96 @@
+<% include ../partials/header.ejs %>
+
+
+
+<!-- Content goes here -->
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-offset-5 col-md-10">
+
+        <h1><%= title %></h1>
+
+
+
+        <a href="/vitalSign-list-Nurse/add" class="btn btn-primary">
+
+          <i class="fa fa-plus"></i> Add New Vital Sign</a>
+
+
+
+      <p></p>
+
+      <table class="table table-bordered table-striped table-hover">
+
+        <!-- Header Row-->
+
+        <tr>
+
+          <th class="text-center">Patient ID</th>
+
+          <th class="text-center">Body Teamperature</th>
+
+          <th class="text-center">Heart Rate</th>
+
+          <th class="text-center">Blood Pressure</th>
+
+          <th class="text-center">Respiratory Rate</th>
+
+          <th class="text-center"></th>
+
+          <th class="text-center"></th>
+
+        </tr>
+
+
+
+        <!-- Template Row-->
+
+        <% for(let count = 0; count < vitalList.length; count++) { %>
+
+        <tr>
+
+          <td class="text-center"><%= vitalList[count].patientID %></td>
+
+          <td class="text-center"><%= vitalList[count].temp %></td>
+
+          <td class="text-center"><%= vitalList[count].heartRate %></td>
+
+          <td class="text-center"><%= vitalList[count].bloodPressure %></td>
+
+          <td class="text-center"><%= vitalList[count].respiratoryRate %></td>
+
+          <td class="text-center">
+            <a
+              href="/vitalSign-list-Nurse/edit/<%= vitalList[count]._id %>"
+              class="btn btn-primary"
+              ><i class="fa fa-pencil-square-o"></i> Edit</a>
+          </td>
+
+          <td class="text-center">
+
+              <a href="/vitalSign-list-Nurse/delete/<%= vitalList[count]._id %>"
+
+                class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
+
+            </td>
+
+        </tr>
+
+        <% } %>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<% include ../partials/footer.ejs %>

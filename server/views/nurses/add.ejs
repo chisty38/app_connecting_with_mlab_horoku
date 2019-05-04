@@ -1,0 +1,100 @@
+<% include ../partials/header.ejs %>
+
+<!-- Content for the Add page -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <h1><%= title %></h1>
+
+      <form class="form" method="POST">
+        <div class="form-group">
+          <label for="patientID">Patient ID</label>
+
+          <input
+            type="text"
+            placeholder="Enter Patient ID"
+            class="form-control"
+            id="patientID"
+            name="patientID"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="temp">Body Temperature</label>
+
+          <input
+            type="text"
+            placeholder="Enter Body Temperature"
+            class="form-control"
+            id="temp"
+            name="temp"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="heartRate">Heart Rate</label>
+
+          <input
+            type="text"
+            placeholder="Enter Heart Rate"
+            class="form-control"
+            id="heartRate"
+            name="heartRate"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="bloodPressure">Blood Pressure</label>
+
+          <input
+            type="text"
+            placeholder="Enter Blood Pressure"
+            class="form-control"
+            id="bloodPressure"
+            name="bloodPressure"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="respiratoryRate">Respiratory Rate</label>
+
+          <input
+            type="text"
+            placeholder="Enter Respiratory Rate"
+            class="form-control"
+            id="respiratoryRate"
+            name="respiratoryRate"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="dailyTip">Daily Tip</label>
+
+          <input
+            type="text"
+            placeholder="Enter Daily Tip"
+            class="form-control"
+            id="dailyTip"
+            name="dailyTip"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-check-square-o"></i> Submit
+        </button>
+        <a href="/vitalSign-list-Nurse" class="btn btn-warning">
+          <i class="fa fa-undo"></i> Cancel</a
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

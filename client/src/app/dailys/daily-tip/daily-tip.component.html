@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-10">
+        <h1>{{ title }}</h1>
+
+
+      <p></p>
+
+      <table class="table table-bordered table-striped table-hover">
+
+        <!-- Header Row-->
+
+        <tr>
+
+          <th class="text-center">Patient ID</th>
+
+          <th class="text-center">Daily Tip</th>
+
+        </tr>
+
+
+
+        <!-- Template Row-->
+
+        <tr *ngFor="let vital of vitals">
+
+          <td class="text-center">{{ vital.patientID }}</td>
+
+          <td class="text-center">{{ vital.dailyTip }}</td>
+
+        </tr>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+

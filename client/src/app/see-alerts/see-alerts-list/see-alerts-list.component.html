@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-10">
+        <h1>See all alerts from Patients</h1>
+
+      <p></p>
+
+      <div class="table-responsive-md">
+
+      <table class="table table-bordered table-striped table-hover">
+
+        <!-- Header Row-->
+
+        <tr>
+
+          <th class="text-center">Patient ID</th>
+
+          <th class="text-center">First Name</th>
+
+          <th class="text-center">Last Name</th>
+
+          <th class="text-center">Description</th>
+
+          <th class="text-center"></th>
+
+        </tr>
+
+
+
+        <!-- Template Row-->
+
+        <tr *ngFor="let alert of alerts">
+
+          <td class="text-center">{{ alert.patientID }}</td>
+
+          <td class="text-center">{{ alert.firstName }}</td>
+
+          <td class="text-center">{{ alert.lastName }}</td>
+
+          <td class="text-center">{{ alert.description }}</td>
+
+          <td class="text-center">
+
+            <a routerLink="/seeAlerts/delete/{{alert._id}}"
+
+              (click)="onDeleteClick()" class="btn btn-danger"><i class="fa fa-trash-alt"></i> Delete
+            </a>
+
+        </td>
+
+        </tr>
+
+      </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>
+
+    <%= title %>
+
+  </title>
+
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/Content/app.css">
+
+</head>
+
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="/">Mainul Haque COMP308</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav ml-auto">
+
+
+
+        <% if (title == "Home") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/"><i class="fa fa-lg fa-home"></i> Home <span class="sr-only">(current)</span></a>
+
+        </li>
+
+        <% if (title == "Alert") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/alert"><i class="fa fa-lg fa-envelope-open-text"></i> Alert</a>
+
+        </li>
+
+        <% if (title == "See Alerts") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/seeAlerts"><i class="fa fa-lg fa-envelope-open-text"></i> See Alerts</a>
+
+        </li>
+
+ 
+        <% if (title == "Video") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/video"><i class="fa fa-lg fa-play"></i> Video</a>
+
+        </li>
+
+
+        <% if (title == "Check List") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/checkList"><i class="fa fa-lg fa-list-alt"></i> Check List</a>
+
+        </li>
+
+        <% if (title == "Dailys") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/dailys"><i class="fa fa-lg fa-stethoscope"></i> Dailys</a>
+
+        </li>
+
+
+        <% if (title == "Vital Sign") { %>
+
+        <li class="nav-item active">
+
+          <% } else { %>
+
+        <li class="nav-item">
+
+          <% } %>
+
+          <a class="nav-link" href="/vitalSign"><i class="fa fa-lg fa-heartbeat"></i> Vital Sign</a>
+
+        </li>
+
+
+        <% if(typeof firstName == 'string' && firstName) { %>
+          <li class="navbar-text"><i class="fa fa-lg fa-user"></i>
+             Welcom, <%= firstName %></li>
+             <li class="nav-item"><a href="/logout" class="nav-link">
+              <i class="fa fa-lg fa-sign-out"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fa fa-lg fa-sign-in"></i> Login</a></li>
+        <% } %>
+
+      </ul>
+
+    </div>
+
+  </nav>

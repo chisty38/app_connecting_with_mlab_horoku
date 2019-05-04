@@ -1,0 +1,72 @@
+<% include ../partials/header.ejs %>
+
+
+
+<!-- Content goes here -->
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-offset-5 col-md-10">
+
+        <h1><%= title %></h1>
+
+      <p></p>
+
+      <table class="table table-bordered table-striped table-hover">
+
+        <!-- Header Row-->
+
+        <tr>
+
+          <th class="text-center">Patient ID</th>
+
+          <th class="text-center">First Name</th>
+
+          <th class="text-center">Last Name</th>
+
+          <th class="text-center">Description</th>
+
+        </tr>
+
+
+
+        <!-- Template Row-->
+
+        <% for(let count = 0; count < alerts.length; count++) { %>
+
+        <tr>
+
+          <td class="text-center"><%= alerts[count].patientID %></td>
+
+          <td class="text-center"><%= alerts[count].firstName %></td>
+
+          <td class="text-center"><%= alerts[count].lastName %></td>
+
+          <td class="text-center"><%= alerts[count].description %></td>
+
+          <td class="text-center">
+
+              <a href="/seeAlerts/delete/<%= alerts[count]._id %>"
+
+                class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
+
+            </td>
+
+        </tr>
+
+        <% } %>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<% include ../partials/footer.ejs %>

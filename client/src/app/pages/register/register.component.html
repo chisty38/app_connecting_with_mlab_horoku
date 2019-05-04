@@ -1,0 +1,114 @@
+<main class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <h1>Please Register</h1>
+      <form autocomplete="off" (ngSubmit)="onRegisterSubmit()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.username"
+              name="username"
+              placeholder="Enter Username"
+              id="username"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="user.password"
+              name="password"
+              placeholder="Enter Password"
+              id="password"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userID">User ID</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="user.userID"
+            name="userID"
+            placeholder="Enter User ID"
+            id="userID"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.firstName"
+              name="firstName"
+              placeholder="Enter First Name"
+              id="firstName"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="user.lastName"
+              name="lastName"
+              placeholder="Enter Last Name"
+              id="lastName"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="user.email"
+            name="email"
+            placeholder="Enter Email"
+            id="email"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select
+            class="form-control"
+            [(ngModel)]="user.category"
+            name="category">
+
+            <option *ngFor="let category of categories"
+              [value]="category"> {{category}} </option>
+          </select>
+        </div>
+
+        <fieldset class="form-group text-right">
+          <input type="submit" class="btn btn-success" value="Register" />
+          <a routerLink="/">
+            <input type="button" class="btn btn-warning" value="Cancel" />
+          </a>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</main>
